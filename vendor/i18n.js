@@ -105,6 +105,7 @@
     , missingTranslationPrefix: ''
   };
 
+
   I18n.reset = function() {
     // Set default locale. This locale will be used when fallback is enabled and
     // the translation doesn't exist in a particular locale.
@@ -137,6 +138,27 @@
     this.missingTranslationPrefix = DEFAULT_OPTIONS.missingTranslationPrefix;
 
   };
+
+  I18n.setLocale = function(language, translations) {
+
+    this.defaultLocale = DEFAULT_OPTIONS.defaultLocale;
+
+    this.baseLanguage = DEFAULT_OPTIONS.baseLanguage;
+
+    this.defaultSeparator = DEFAULT_OPTIONS.defaultSeparator;
+
+    this.placeholder = DEFAULT_OPTIONS.placeholder;
+
+    this.fallbacks = DEFAULT_OPTIONS.fallbacks;
+
+    this.missingBehaviour = DEFAULT_OPTIONS.missingBehaviour;
+
+    this.missingTranslationPrefix = DEFAULT_OPTIONS.missingTranslationPrefix;
+
+    this.locale = language;
+
+    this.translations = translations;
+  }
 
   // Much like `reset`, but only assign options if not already assigned
   I18n.initializeOptions = function() {
